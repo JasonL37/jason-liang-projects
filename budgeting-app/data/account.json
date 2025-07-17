@@ -1,0 +1,24 @@
+{
+    "income": 900,
+    "creditScore": 500,
+    "accName": "j",
+    "budgetList": [
+        {
+            "income": 900,
+            "balance": 990,
+            "listOfExpenses": [],
+            "listOfSavings": []
+        },
+        {
+            "income": 900,
+            "balance": 990,
+            "listOfExpenses": [],
+            "listOfSavings": []
+        }
+    ],
+    "approachingBillsList": [],
+    "upcomingBillsList": [],
+    "credScoreStatus": "Poor",
+    "accStatus": true,
+    "overdueBillsList": []
+}
