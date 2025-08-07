@@ -1,0 +1,121 @@
+.container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.left{
+    flex: 1;
+    background-color: white;
+}
+
+.right{
+    flex: 1;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.signUp{
+    width: 60%;
+}
+
+.inputContainer input{
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+
+.inputContainer label {
+    margin-left: 5%;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.bottomButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    width: 100%;
+    
+}
+
+.bottomButton button{
+    background: none;
+    color: black; 
+    font-weight:bolder;
+    margin: 0px;
+    padding: 2px;
+    color: #1153bf;
+    border: none;
+
+}
+
+.doctorPatient{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.doctorPatient button {
+    flex: 1;
+}
+
+.bottomButton button:hover{
+   scale: 1.1
+}
+
+.bottomButton p{
+    font-weight: bold;
+}
+
+h1{
+    color: #1153bf;
+}
+
+p{
+    font-style: italic;
+}
+
+
+button{
+    margin-top: 10px;
+}
+
+button:hover{
+    font-weight: bold;
+}
+
+img{
+    width: 100%;
+    object-fit: contain;
+}
+
+h3{
+    font-style: italic;
+    margin: 0px;
+}
+
+.signUp button{
+    background-color: rgba(0,0,0,0.8);
+    color: white
+}
+
+@media (max-width: 600px) {
+    .left{
+        display: none;
+    }
+}
+

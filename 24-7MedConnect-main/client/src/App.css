@@ -1,0 +1,43 @@
+#root {
+width: 100vw;
+height: 100vh;
+background-color: white;
+
+}
+
+.mainContainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('./Utils/Images/background.png');
+background-size: cover;
+}
+
+.mainContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2); /* Overlay with opacity */
+  border-radius: 15px;
+  z-index: 1;
+  pointer-events: none; /* Ensures the overlay does not block interactions */
+}
+
+.containerWrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+
+
+

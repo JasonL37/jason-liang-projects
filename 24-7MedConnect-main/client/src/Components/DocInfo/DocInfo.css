@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oswald:wght@200..700&display=swap');
+
+
+.docContainer{
+    height: 80%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    border-radius: 20px;
+    gap: 5%;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+}
+
+.docContainer:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    animation: transformAnimation 0.5s ease-in;
+}
+
+/* Keyframes for animation */
+@keyframes transformAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+
+.imgContainer{
+    flex: 2;
+    width: 20vw;
+    height: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; 
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.imgContainer img{
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    padding: 0px;
+    margin: 0px;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+h1,  h2, p {
+    margin: 5px;
+    height: fit-content;
+    align-self: center;
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2.5rem;
+}
+
+h2{
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+
+}
+
+.callButton{
+    width: 80%;    
+}
+
+.nameContainer {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.callButton button{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.callButton button:hover {
+    background-color: #0056b3;
+    transition: font-size 1s;
+    font-size: 20px;
+}
