@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Decider</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="/" class="page-logo">
+            <h1 id="logo">
+                MealDecider
+                <img id="logo-image" src="{{ url_for('static', filename='images/logo.svg')}}">
+            </h1>
+        </a>    
+    </header>
+    <div class ="page-header">
+        <h2 class="intro-text"> 
+            These are the recipes we found.
+        </h2>
+        <p id="intro-description">
+            Based on the ingredients you provided, your dietary restrictions, and spice preferences, these are the recipes we found you can currently make:
+        </p>
+    </div>  
+    <div class="recipe-container">
+        {% for recipe in recipes %}
+        <div class="recipe-card">
+            <h3>
+                {{ recipe[1] }}
+                <p><strong>Ingredients:</strong>
+                    {{ recipe[5] }}
+                </p>
+                <p><strong>Instructions:</strong>
+                    {{ recipe[2] }}
+                </p>
+            </h3>
+            <div class="recipe-filter">
+                <div class="filter-item"><strong>Dietary Restriction:</strong>
+                    {{ recipe[3] if recipe[3] else 'None' }}
+                </div>
+                <div class="filter-item"><strong>Spice Level:</strong>
+                    {{ recipe[4] if recipe[4] else 'None' }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

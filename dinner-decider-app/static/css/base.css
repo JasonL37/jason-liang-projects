@@ -1,0 +1,46 @@
+/* resets, variables, fonts */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-font: "Inter", system-ui;
+    --marg-xs: 4px; 
+    --marg-sm: 8px;   
+    --marg-md: 16px; 
+    --marg-lg: 24px; 
+    --marg-xl: 32px;
+}
+
+h1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: rgb(122, 156, 198);
+    margin: var(--marg-sm);
+    font-size: 4rem;
+}
+
+h2 {
+    color: rgb(211, 97, 53);
+    margin: var(--marg-sm);
+    font-size:2rem;
+}
+
+#intro-description {
+    color: grey;
+    margin-top: var(--marg-sm);
+    margin-left: var(--marg-sm);
+    margin-bottom: var(--marg-xl);
+    font-size: 1rem;
+}
+
+body {
+    font-family: var(--main-font);
+    background-color: rgb(242, 227, 188);
+}

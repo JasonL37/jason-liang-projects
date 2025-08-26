@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Decider</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="/" class="page-logo">
+            <h1 id="logo">
+                MealDecider
+                <img id="logo-image" src="{{ url_for('static', filename='images/logo.svg')}}">
+            </h1>
+        </a>    
+    </header>
+    <div class ="page-header">
+        <h2 class="intro-text"> 
+            What's in your kitchen?
+        </h2>
+        <p id="intro-description">
+            Enter the ingredients you have available, and we'll find recipes you can make right now
+        </p>
+    </div>
+
+    <form id="preference" method="POST" action="/results">
+        <div class="input-bar">
+            <input type="search" id="ingredient-search" name="ingredients" placeholder="Type ingredients..." aria-label="Search ingredients">
+            <span class="clear"></span>
+        </div>
+        <section class="form-section">
+            <h3 class="section-label">
+                Added Ingredients:
+            </h3>
+            <div class="ingredients">
+                <ul id="ingredient-list"></ul>
+            </div>
+        </section>
+        <section>
+            <h4 class="section-label">
+                Dietary Restrictions:
+            </h4>
+            <div class="checklist">
+                <label>
+                    <input type="checkbox" id=vegetarian name="dietary-restriction">
+                    Vegetarian
+                </label>
+                <label>
+                    <input type="checkbox" id="dairy-free" name="dietary-restriction">
+                    Dairy-free
+                </label>
+                <label>
+                    <input type="checkbox" id="vegan" name="dietary-restriction">
+                    Vegan
+                </label>
+                <label>
+                    <input type="checkbox" id="halal" name="dietary-restriction">
+                    Halal
+                </label>
+                <label>
+                    <input type="checkbox" id="gluten-free" name="dietary-restriction">
+                    Gluten-free
+                </label>
+                <label>
+                    <input type="checkbox" id="nut-free" name="dietary-restriction">
+                    Nut-free
+                </label>
+                <label>
+                    <input type="checkbox" id="pescatarian" name="dietary-restriction">
+                    Pescatarian
+                </label>
+                <label>
+                    <input type="checkbox" id="kosher" name="dietary-restriction">
+                    Kosher
+                </label>
+                <label>
+                    <input type="checkbox" id="shellfish-free" name="dietary-restriction">
+                    Shellfish-free
+                </label>
+                <label>
+                    <input type="checkbox" id="keto" name="dietary-restriction">
+                    Keto
+                </label>
+                <label>
+                    <input type="checkbox" id="diabetes" name="dietary-restriction">
+                    Diabetes
+                </label>
+                <label>
+                    <input type="checkbox" id="soy" name="dietary-restriction">
+                    Soy
+                </label>
+            </div>
+        </section>
+        <section class="form-section">
+            <h5 class="section-label">
+                Spice Preference:
+            </h5>
+            <div class=spice-preference>
+                <input type="radio" name="spice-level" id="no-spice" value = 0>
+                <label for="no-spice">
+                    None
+                </label>
+                <input type="radio" name="spice-level" id="mild-spice" value = 1>
+                <label for="mild-spice">
+                    Mild
+                </label>
+                <input type="radio" name="spice-level" id="med-spice" value = 2>
+                <label for="med-spice">
+                    Medium
+                </label>
+                <input type="radio" name="spice-level" id="spicy-spice" value = 3>
+                <label for="spicy-spice">
+                    Spicy
+                </label>
+                <input type="radio" name="spice-level" id="hot-spice" value = 4>
+                <label for="hot-spice">
+                    Hot
+                </label>
+            </div>
+        </section>
+        <section class="section-label">
+            <div class="find-results">
+                <div class="button-container">
+                    <button type="submit" class="action-button">
+                        Find Recipes
+                    </button>
+                </div>
+            </div> 
+        </section>
+    </form>
+    <script 
+        src="{{url_for('static', filename='index.js') }}">
+    </script>   
+</body>
+</html>
