@@ -32,10 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 listItemRemover.classList.add("remove-ingredient");
                 listItemContainer.appendChild(listItemRemover);
 
-                // This is the key part that you need to add 👇
                 listItemRemover.addEventListener('click', function() {
-                  // The `this` keyword refers to the clicked removeButton.
-                  // We remove its parent, which is the whole ingredient container.
                     this.parentNode.remove();
                 });
                 ingredientListElement.appendChild(listItemContainer);
