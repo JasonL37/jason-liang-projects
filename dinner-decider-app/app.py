@@ -77,6 +77,7 @@ def find_recipes():
             recipes = cursor.fetchall()
             cursor.close()
             return render_template("results.html", recipes=recipes)
+        
     except psycopg2.DatabaseError as e:
         print(f"Database error: {e}")
         return("An error occurred while attempting to fetch the recipes."), 500
