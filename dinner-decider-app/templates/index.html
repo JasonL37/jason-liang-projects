@@ -28,6 +28,7 @@
     </div>
 
     <form id="preference" method="POST" action="/results">
+        <input type="hidden" id="curr-ingredient" name="current-ingredient">
         <div class="input-bar">
             <input type="search" id="ingredient-search" name="ingredients" placeholder="Type ingredients..." aria-label="Search ingredients">
             <span class="clear"></span>
@@ -46,51 +47,51 @@
             </h4>
             <div class="checklist">
                 <label>
-                    <input type="checkbox" id=vegetarian name="dietary-restriction">
+                    <input type="checkbox" id=vegetarian name="dietary-restriction" value="vegetarian">
                     Vegetarian
                 </label>
                 <label>
-                    <input type="checkbox" id="dairy-free" name="dietary-restriction">
+                    <input type="checkbox" id="dairy-free" name="dietary-restriction" value="diary-free">
                     Dairy-free
                 </label>
                 <label>
-                    <input type="checkbox" id="vegan" name="dietary-restriction">
+                    <input type="checkbox" id="vegan" name="dietary-restriction" value="vegan">
                     Vegan
                 </label>
                 <label>
-                    <input type="checkbox" id="halal" name="dietary-restriction">
+                    <input type="checkbox" id="halal" name="dietary-restriction" value="halal">
                     Halal
                 </label>
                 <label>
-                    <input type="checkbox" id="gluten-free" name="dietary-restriction">
+                    <input type="checkbox" id="gluten-free" name="dietary-restriction" value="gluten-free">
                     Gluten-free
                 </label>
                 <label>
-                    <input type="checkbox" id="nut-free" name="dietary-restriction">
+                    <input type="checkbox" id="nut-free" name="dietary-restriction" value="nut-free">
                     Nut-free
                 </label>
                 <label>
-                    <input type="checkbox" id="pescatarian" name="dietary-restriction">
+                    <input type="checkbox" id="pescatarian" name="dietary-restriction" value="pescatarian">
                     Pescatarian
                 </label>
                 <label>
-                    <input type="checkbox" id="kosher" name="dietary-restriction">
+                    <input type="checkbox" id="kosher" name="dietary-restriction" value="kosher">
                     Kosher
                 </label>
                 <label>
-                    <input type="checkbox" id="shellfish-free" name="dietary-restriction">
+                    <input type="checkbox" id="shellfish-free" name="dietary-restriction" value="shellfish-free">
                     Shellfish-free
                 </label>
                 <label>
-                    <input type="checkbox" id="keto" name="dietary-restriction">
+                    <input type="checkbox" id="keto" name="dietary-restriction" value="keto">
                     Keto
                 </label>
                 <label>
-                    <input type="checkbox" id="diabetes" name="dietary-restriction">
+                    <input type="checkbox" id="diabetes" name="dietary-restriction" value="diabetes">
                     Diabetes
                 </label>
                 <label>
-                    <input type="checkbox" id="soy" name="dietary-restriction">
+                    <input type="checkbox" id="soy" name="dietary-restriction" value="soy">
                     Soy
                 </label>
             </div>

@@ -185,7 +185,7 @@
     position:absolute;
 }
 
-/* Recipe Container Grid */
+/* recipe container  */
 .recipe-container {
     display: grid;
     gap: 2rem;
