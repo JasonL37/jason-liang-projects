@@ -54,10 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 listItemRemover.classList.add("remove-ingredient");
                 listItemContainer.appendChild(listItemRemover);
 
-<<<<<<< HEAD
-                // the remove button removes the ingredient from the ingredient list when clicked 
-=======
->>>>>>> 4ce27e2913969099d0111ad0fe4282403ee2ab00
                 listItemRemover.addEventListener('click', function() {
                     this.parentNode.remove();
                 });
@@ -66,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-<<<<<<< HEAD
 
     // when the form is submitted, it collects all the ingredients from the list
     form.addEventListener('submit', function(event) {
@@ -78,6 +73,4 @@ document.addEventListener('DOMContentLoaded', function() {
             ingredientInput.value = '';
         }
     });
-=======
->>>>>>> 4ce27e2913969099d0111ad0fe4282403ee2ab00
 });
