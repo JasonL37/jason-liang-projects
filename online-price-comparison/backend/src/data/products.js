@@ -1,1 +1,58 @@
-    
+
+
+const products = [
+  {
+    id: "airpods-pro-bestbuy",
+    title: "Apple AirPods Pro 2nd Generation",
+    price: 189.99,
+    originalPrice: 249.99,
+    currency: "USD",
+    rating: 4.8,
+    reviewCount: 12432,
+    store: "Best Buy",
+    productUrl: "https://www.bestbuy.com/site/apple-airpods-pro-2nd-generation/airpods",
+    imageUrl: "https://example.com/images/airpods-pro-bestbuy.jpg",
+    shippingCost: 0,
+  },
+  {
+    id: "airpods-pro-target",
+    title: "Apple AirPods Pro with MagSafe Charging Case",
+    price: 179.99,
+    originalPrice: 249.99,
+    currency: "USD",
+    rating: 4.7,
+    reviewCount: 8931,
+    store: "Target",
+    productUrl: "https://www.target.com/p/apple-airpods-pro/airpods",
+    imageUrl: "https://example.com/images/airpods-pro-target.jpg",
+    shippingCost: 5.99,
+  },
+  {
+    id: "airpods-3-amazon",
+    title: "Apple AirPods 3rd Generation",
+    price: 139.99,
+    originalPrice: 169.99,
+    currency: "USD",
+    rating: 4.6,
+    reviewCount: 22104,
+    store: "Amazon",
+    productUrl: "https://www.amazon.com/apple-airpods-3rd-generation/dp/example",
+    imageUrl: "https://example.com/images/airpods-3-amazon.jpg",
+    shippingCost: 0,
+  },
+  {
+    id: "sony-wh1000xm5",
+    title: "Sony WH-1000XM5 Wireless Headphones",
+    price: 328,
+    originalPrice: 399.99,
+    currency: "USD",
+    rating: 4.7,
+    reviewCount: 7120,
+    store: "Walmart",
+    productUrl: "https://www.walmart.com/ip/sony-wh-1000xm5/example",
+    imageUrl: "https://example.com/images/sony-wh1000xm5.jpg",
+    shippingCost: 0,
+  },
+];
+
+module.exports = products;
