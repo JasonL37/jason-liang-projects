@@ -17,10 +17,17 @@ The app allows users to search for a product and compares prices from online sou
 - system should ignore invalid or empty search queries
 - each product should display the shipping cost when available
 - the system highlights the cheapest option
-- backend validates the search query before calling external APIs.
+- backend validates the search query before calling external APIs
+- the user can decide on the currency they want the prices of their results to show up in
+- search bar should show the user's search history
+
 # Non-functional Requirements
 - the app should return results within a reasonable time, such as under 5 seconds.
 - the UI should be simple and easy to use.
 - the backend should normalize product data into one consistent format across platforms
 - the app should handle missing product data, such as missing ratings or images
 - app should display error message when a product cannot be found
+- backend should cache repeated search results to reduce response time and external API usage.
+- cached product results should expire after a fixed time to avoid showing stale prices.
+- the product should be deployed on an accessible website
+- the frontend should be hosted on a platform

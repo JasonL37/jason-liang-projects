@@ -142,6 +142,16 @@ describe("GET /api/search", () => {
     expect(response.body.results.every((product) => product.price <= 180)).toBe(true);
   });
 
+  test("filters matching products by minimum price", async () => {
+    const response = await request(app)
+      .get("/api/search")
+      .query({ q: "airpods", minPrice: 180 });
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body.results.length).toBeGreaterThan(0);
+    expect(response.body.results.every((product) => product.price >= 180)).toBe(true);
+  });
+
   test("includes shipping cost when available", async () => {
     const response = await request(app).get("/api/search").query({ q: "airpods" });
 

@@ -24,6 +24,33 @@ The Price Comparison App allows users to search for a product and compare prices
 
 - Backend: Express.js
 
-- Database: TBD
-
 - Testing: Vitest + React Testing Library, Supertest, Playright
+
+## Backend environment
+
+Create `backend/.env` from `backend/.env.sample` and add your eBay developer
+application credentials:
+
+```env
+EBAY_CLIENT_ID=your_client_id
+EBAY_CLIENT_SECRET=your_client_secret
+EBAY_MARKETPLACE_ID=EBAY_US
+PLATZI_ENABLED=true
+```
+
+## Run the app
+
+Start the backend:
+
+```bash
+cd backend
+npm run dev
+```
+
+Start the frontend in another terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
