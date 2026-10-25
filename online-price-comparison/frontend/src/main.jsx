@@ -21,6 +21,8 @@ const ratingOptions = [
   { label: "4.5+", value: "4.5" },
 ];
 
+const currencyOptions = ["USD", "CAD", "EUR", "GBP"];
+
 function formatCurrency(value, currency = "USD") {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -43,6 +45,8 @@ function ProductImage({ product }) {
 function ProductCard({ product }) {
   const totalPrice = Number(product.price || 0) + Number(product.shippingCost || 0);
   const hasRating = Number(product.rating) > 0;
+  const wasConverted =
+    product.originalCurrency && product.originalCurrency !== product.currency;
 
   return (
     <article className={product.isCheapest ? "product cheapest" : "product"}>
@@ -66,6 +70,9 @@ function ProductCard({ product }) {
             <span>{formatCurrency(product.originalPrice, product.currency)}</span>
           ) : null}
         </div>
+        {wasConverted ? (
+          <p className="conversion-note">Converted from {product.originalCurrency}</p>
+        ) : null}
 
         <dl className="meta-grid">
           <div>
@@ -112,6 +119,7 @@ function ProductCard({ product }) {
 function App() {
   const [query, setQuery] = React.useState("airpods");
   const [sort, setSort] = React.useState("price");
+  const [currency, setCurrency] = React.useState("USD");
   const [minRating, setMinRating] = React.useState("");
   const [minPrice, setMinPrice] = React.useState("");
   const [maxPrice, setMaxPrice] = React.useState("");
@@ -142,6 +150,7 @@ function App() {
     const params = new URLSearchParams({
       q: trimmedQuery,
       sort,
+      currency,
     });
 
     if (minRating) {
@@ -174,6 +183,7 @@ function App() {
         results: data.results,
         count: data.count,
         searchedQuery: data.query,
+        currency: data.currency || currency,
       });
     } catch (error) {
       setSearchState({
@@ -182,6 +192,7 @@ function App() {
         results: [],
         count: 0,
         searchedQuery: trimmedQuery,
+        currency,
       });
     }
   }
@@ -222,6 +233,20 @@ function App() {
             <select value={sort} onChange={(event) => setSort(event.target.value)}>
               <option value="price">Lowest total price</option>
               <option value="rating">Highest rating</option>
+            </select>
+          </label>
+
+          <label className="currency-control">
+            <span>Currency</span>
+            <select
+              value={currency}
+              onChange={(event) => setCurrency(event.target.value)}
+            >
+              {currencyOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
             </select>
           </label>
 
@@ -307,6 +332,7 @@ function App() {
           <>
             <div className="results-summary">
               <strong>{searchState.count}</strong> results for "{searchState.searchedQuery}"
+              <span> Prices shown in {searchState.currency || currency}.</span>
             </div>
             <div className="results-list">
               {searchState.results.map((product) => (

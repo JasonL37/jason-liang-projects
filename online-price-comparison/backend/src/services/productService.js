@@ -3,6 +3,7 @@ const externalProductProvider = require("../providers/externalProductProvider");
 const ebayProductProvider = require("../providers/ebayProductProvider");
 const platziProductProvider = require("../providers/platziProductProvider");
 const sortProducts = require("../utils/sortProducts");
+const currencyConverter = require("../utils/currencyConverter");
 
 function isPlatziEnabled() {
   return process.env.PLATZI_ENABLED === "true";
@@ -87,9 +88,17 @@ function highlightCheapestProduct(products) {
   }));
 }
 
-async function searchProducts({ query, sort, minRating, minPrice, maxPrice }) {
+async function searchProducts({
+  query,
+  sort,
+  minRating,
+  minPrice,
+  maxPrice,
+  currency,
+}) {
   const products = await getProductListings(query);
-  const filteredProducts = filterProducts(products, {
+  const convertedProducts = await currencyConverter.convertProducts(products, currency);
+  const filteredProducts = filterProducts(convertedProducts, {
     query,
     minRating,
     minPrice,

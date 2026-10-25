@@ -81,6 +81,7 @@ h1 {
 
 .search-input,
 .sort-control,
+.currency-control,
 .price-control label,
 .rating-control {
   display: flex;
@@ -136,12 +137,15 @@ h1 {
 
 .controls {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(270px, 1.2fr) minmax(190px, 0.8fr);
+  grid-template-columns:
+    minmax(190px, 1fr) minmax(150px, 0.7fr) minmax(270px, 1.2fr)
+    minmax(190px, 0.8fr);
   gap: 10px;
   margin-top: 14px;
 }
 
 .sort-control,
+.currency-control,
 .price-control label,
 .rating-control {
   gap: 8px;
@@ -149,6 +153,7 @@ h1 {
 }
 
 .price-control,
+.currency-control,
 .rating-control {
   min-width: 0;
 }
@@ -181,6 +186,7 @@ h1 {
   font-weight: 800;
 }
 
+.currency-control span,
 .rating-control span {
   display: inline-flex;
   align-items: center;
@@ -190,6 +196,15 @@ h1 {
   font-size: 0.9rem;
   font-weight: 800;
   white-space: nowrap;
+}
+
+.currency-control select {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #17211b;
 }
 
 .history {
@@ -312,6 +327,13 @@ h1 {
 .price-row span {
   color: #7a7064;
   text-decoration: line-through;
+}
+
+.conversion-note {
+  margin: 4px 0 0;
+  color: #6d766e;
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 .meta-grid {
